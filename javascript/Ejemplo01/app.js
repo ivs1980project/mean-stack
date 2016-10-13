@@ -23,5 +23,5 @@ function mi_funcion_con_let(){
     //console.log("valor de al final "+ i);
 }
 mi_funcion_con_var();
-//mi_funcion_con_let();
+mi_funcion_con_let();
 console.log("Adios mundo cruel!");
