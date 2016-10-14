@@ -81,7 +81,7 @@ function addParametersAB(){
         resultado = 0;
         for (let i=0; i <arguments.length;i++){
             if (isNaN(arguments[i])){
-                console.log ("El dato " +arguments[i]+ " no se puede sumar: "+ typeof arguments[i]);
+                console.log ("El dato " +arguments[i]+ " no se puede sumar. Es de tipo "+ typeof arguments[i]);
             } else {
                 resultado = resultado + arguments[i];
             }
@@ -90,10 +90,55 @@ function addParametersAB(){
     return resultado;
 }
 
-console.log ("Resultado: " +addParametersAB(1));
-console.log ("Resultado: " +addParametersAB(1,2));
-console.log ("Resultado: " +addParametersAB());
-console.log ("Resultado: " +addParametersAB(1,2,3));
-console.log ("Resultado: " +addParametersAB(1,2,3,"cadena",5,1,"nueve"));
-console.log ("Resultado: " +addParametersAB("cadena","nueve"));
+function addParametersDC(){
+    if (arguments.length<2){
+        console.log("Numero de argumentos insuficiente");
+        console.log("Numero de parametros recibido " +arguments.length);
+        console.log("Numero de parametros esperado " +arguments.callee.length);
+    } else {
+        let resultado = 0;
+        let contador = 0;
+        for (let i=0; i <arguments.length;i++){
+            
+            switch (arguments[i]){
+            }
+            if (isNaN(arguments[i])){
+                console.log ("El dato " +arguments[i]+ " no se puede sumar. Es de tipo "+ typeof arguments[i]);
+            } else {
+                resultado = resultado + arguments[i];
+            }
+        }
+        return resultado;
+    }
+    return;
+}
+
+console.log ("Resultado: " +addParametersDC(1));
+console.log ("Resultado: " +addParametersDC(1,2));
+console.log ("Resultado: " +addParametersDC());
+console.log ("Resultado: " +addParametersDC(1,2,3));
+console.log ("Resultado: " +addParametersDC(1,2,3,"cadena",5,1,new Date(),"nueve",true));
+console.log ("Resultado: " +addParametersDC("cadena","nueve"));
+
+console.log("Inicio de ejemplos JS con Arrays");
+function testConArrays(){
+    let mi_array = new Array();
+    mi_array[0]=7; 
+    mi_array[1]="prueba";
+    mi_array[mi_array.length-1];
+    let mi_otro_array = [];
+    let otro = ["uno", 2, new Date()];
+    //Arrays asociativos
+    let array_asociativo = new Array();
+    array_asociativo['uno'] = 1;
+    console.log(array_asociativo['uno']);
+    let persona = new Array();
+    persona.nombre = "Ivan";
+    persona.apellido1 = "Valero";
+    persona.addParametersDC = addParametersDC;
+    console.log("Nombre completo " + persona.nombre + " " + persona.apellido1 + " edad: "+ persona.addParametersDC(7,3));
+}
+
+
+testConArrays();
 console.log("Adios mundo cruel!");
