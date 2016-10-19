@@ -10,7 +10,7 @@
   border-radius: 31px;
   font-family: Arial;
   color: #fffaff;
-  font-size: 20px;
+  font-size: 15px;
   padding: 10px 30px 10px 30px;
   border: solid #1f628d 3px;
   text-decoration: none;
@@ -50,6 +50,21 @@
   border-width:1px;
   overflow:hidden;
   word-break:normal;
+  }
+
+
+.calc-header{
+  background: lightgray;
+  font-family:Arial, sans-serif;
+  overflow: hidden;
+	padding: 20px;
+	position: relative;
+	text-align: right;
+}
+
+.tg .tg-123{
+  text-align:center
+  rowspan=3
   }
 
 .tg .tg-s6z2{
