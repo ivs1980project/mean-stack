@@ -17,37 +17,37 @@
  
 <table class="tg">
   <tr>
-    <th class="calc-header" colspan=4>Display</th>
+    <th class="calc-header" colspan=4><input type="text" id="display" class="display"/></th>
   </tr>
   <tr>
-    <td class="tg-yw4l"><button class="btn">CE</button></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="clearDisplay()" value ="CE"/></td>
     <td class="tg-yw4l"><button class="btn">+-</button></td>
     <td class="tg-yw4l"><button class="btn">M+</button></td>
     <td class="tg-s6z2"><button class="btn">MR</button></td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><button class="btn" onclick="boton1()" value="1">1</button></td>
-    <td class="tg-yw4l"><button class="btn">2</button></td>
-    <td class="tg-yw4l"><button class="btn">3</button></td>
-    <td class="tg-s6z2"><button class="btn">+</button></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(1)" value ="1"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(2)" value ="2"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(3)" value ="3"/></td>
+    <td class="tg-s6z2"><input type="submit" id="btn" class="btn" onclick="operacion('+')" value ="+"/></td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><button class="btn">4</button></td>
-    <td class="tg-yw4l"><button class="btn">5</button></td>
-    <td class="tg-yw4l"><button class="btn">6</button></td>
-    <td class="tg-s6z2"><button class="btn">-</button></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(4)" value ="4"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(5)" value ="5"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(6)" value ="6"/></td>
+    <td class="tg-s6z2"><input type="submit" id="btn" class="btn" onclick="operacion('-')" value ="-"/></td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><button class="btn">7</button></td>
-    <td class="tg-yw4l"><button class="btn">8</button></td>
-    <td class="tg-yw4l"><button class="btn">9</button></td>
-    <td class="tg-s6z2"><button class="btn">*</button></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(7)" value ="7"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(8)" value ="8"/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(9)" value ="9"/></td>
+    <td class="tg-s6z2"><input type="submit" id="btn" class="btn" onclick="operacion('*')" value ="*"/></td>
   </tr>
   <tr>
-    <td class="tg-yw4l"><button class="btn">.</button></td>
-    <td class="tg-yw4l"><button class="btn">0</button></td>
-    <td class="tg-yw4l"><button class="btn">=</button></td>
-    <td class="tg-s6z2"><button class="btn">/</button></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(.)" value ="."/></td>
+    <td class="tg-yw4l"><input type="submit" id="btn" class="btn" onclick="boton(0)" value ="0"/></td>
+    <td class="tg-s6z2"><input type="submit" id="btn" class="btn" onclick="calcular()" value ="="/></td>
+    <td class="tg-s6z2"><input type="submit" id="btn" class="btn" onclick="operacion('/')" value ="/"/></td>
   </tr>
 </table>
 </body>

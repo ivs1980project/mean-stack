@@ -1,0 +1,119 @@
+/*Contenedor*/
+body {
+    background: green;
+    color: white;
+    font: sans-serif 14px;
+    text-shadow: 2px 2px 3px (0,0,0,.4);
+}
+#contenedor {
+    background: yellow;
+    /*Indica margenes top-bottom y left-right
+    Si indico el segundo como auto, le estoy indicando que se centre*/
+    margin: 0 auto;
+    /*Si deseo no ocupar todo el ancho, puedo indicar los limites*/
+    max-width: 1000 px;
+    /*En vez de introducir un margin a cada elemento del contenedor, 
+    defino un border y consigo el mismo efecto */
+    border :5px yellow;
+    border-radius: 5px;
+}
+
+/*Estilos de cabecera y pie*/
+section#contenedor > header,  section#contenedor  > footer{
+    background: red;
+    border-radius: 5px;
+}
+
+header#cabecera > section{
+    /*Todos los elementos en la misma linea*/
+    display: inline-block;
+    font-size: 2em;
+    /*Centramos uno respecto del otro*/
+    vertical-align: middle;
+    margin: 10px;
+}
+
+footer#pie > section{
+    padding-right: 10px;
+    text-align: right;
+}
+
+/*Estilos para las secciones de cuerpo y miga de pan*/
+section#contenedor > section, nav#MigaDePan{
+    background: white;
+    border-radius: 5px;
+    color:black;
+    font-size: 15px;
+    margin: 5px,5px;
+    padding: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Laterales */
+
+section#contenedor > section#lateral {
+    width: 20%;
+    min-width: 150px;
+    float: left;
+}
+
+section#contenedor > section#lateral a{
+    text-decoration: none;
+    color: white;
+}
+section ul {
+    padding: 0px;
+    box-shadow: 5px 5px 0 #333;
+}
+
+section ul li {
+    /*Cambio la lista para que esté en la misma linea*/
+    display: block;
+    background: rgba(0,0,0,.5);
+    padding: 10px;
+}
+
+/*Principal*/
+section#contenedor > section#principal {
+    margin-left: 24%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:400 px){
+    header#cabecera > section {
+        display: block;
+        text-align: center;
+    }
+    h1{
+        margin: 0px;
+    }
+    section#contenedor > section#principal{
+        margin: 5px 0px;
+        float: none;
+        width: auto;
+    }
+}
+
+@media screen and (max-width:800 px){
+    section#contenedor > section#lateral{
+        width: 150 px;
+    }
+    section#contenedor > section#principal{
+        width: 185 px;
+    }
+}
+/*Imagen*/
+#detalle img {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+@media screen and (max-width: 1000px){
+    #detalle img {
+        display: none;
+    }
+}
