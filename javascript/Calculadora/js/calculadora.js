@@ -1,31 +1,30 @@
-var memoria;
-function boton(valor) {
-    console.log(valor);
-    digitosDisplay(valor);
+function sumar(operando1,operando2){
+    return parseFloat(operando1)+parseFloat(operando2);
 }
 
-function digitosDisplay(valor){
-		document.getElementById("display").value += valor;
+function restar(operando1,operando2){
+    return parseFloat(operando1)-parseFloat(operando2);
 }
 
-function clearDisplay(){
-        document.getElementById("display").value = null;
+function multiplicar(operando1,operando2){
+    return parseFloat(operando1)*parseFloat(operando2);
 }
 
-function calcular(){
-        var resul = eval(document.getElementById("display").value);
-        console.log(resul);
-        clearDisplay();
-        document.getElementById("display").value = resul;
+function dividir(operando1,operando2){
+    return parseFloat(operando1)/parseFloat(operando2);
 }
 
-
-function operacion(operador){
-        
-        if (operador == "+"){
-            memoria = document.getElementById("display").value
-        } else if (operador == "="){
-            //TODO: llamar a calculadora con el valor de la memoria, el display
-        }
+function operate (operando1,operando2,operacion){
+    switch (operacion){
+            case "+":{
+                return parseFloat(operando1)+parseFloat(operando2);
+            } case "-":{
+                return parseFloat(operando1)-parseFloat(operando2);
+            } case "*":{
+                return parseFloat(operando1)*parseFloat(operando2);
+            } case "/":{
+                return parseFloat(operando1)/parseFloat(operando2);
+            }
+    }
 
 }
