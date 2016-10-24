@@ -39,10 +39,20 @@ function addToDisplay(valor){
                 }
                 break;
             default:
+                document.getElementById("display").value = trimLeftZeros(document.getElementById("display").value);
                 document.getElementById("display").value += valor;
                 break;
         }
 
+}
+function trimLeftZeros(cadena){
+
+    if (cadena.startsWith("0")){
+        if (!(cadena.charAt(1)==".")){
+            cadena = cadena.replace(/^0+/, '');
+        }
+    }
+    return cadena;
 }
 
 function clearDisplay(){
@@ -82,7 +92,7 @@ function operacion(operation){
                 }
                 //TODO: llamar a calculadora con el valor de la memoria, el display
                 let resul = operate(calculadora.memoria,document.getElementById("display").value,operador);
-                calculadora.memoria = document.getElementById("display").value;                
+//                calculadora.memoria = document.getElementById("display").value;                
                 document.getElementById("display").value = resul;
                 break;
             }

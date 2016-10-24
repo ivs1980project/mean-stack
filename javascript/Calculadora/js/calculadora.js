@@ -22,7 +22,8 @@ function dividir(operando1,operando2){
 function operate (operando1,operando2,operacion){
     switch (operacion){
             case "+":{
-                return parseFloat(operando1)+parseFloat(operando2);
+                return parseFloat(memoria)+parseFloat(operando2);
+//                return parseFloat(operando1)+parseFloat(operando2);
             } case "-":{
                 return parseFloat(operando1)-parseFloat(operando2);
             } case "*":{
