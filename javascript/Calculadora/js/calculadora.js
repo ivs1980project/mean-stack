@@ -1,3 +1,8 @@
+var memoria;
+
+function Calculadora(){
+    this.memoria=0;
+}
 function sumar(operando1,operando2){
     return parseFloat(operando1)+parseFloat(operando2);
 }
