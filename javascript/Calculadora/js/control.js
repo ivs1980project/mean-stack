@@ -15,8 +15,8 @@ function addValue(value) {
 }
 
 function addToDisplay(valor){
-        //Controlamos el valor a añadir en el display. Que no se metan caracteres ni números no válidos
-        //TODO: Hay que modificar este código y hacerlo con un patron
+        //TODO: Controlamos el valor a añadir en el display. Que no se metan caracteres ni números no válidos
+        //TODO: Hay que modificar este código y hacerlo con patrones
         let position;
         switch (valor){
             case ("0"):
