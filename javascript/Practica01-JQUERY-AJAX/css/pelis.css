@@ -1,0 +1,18 @@
+contenedor-tabla{
+    display: table;
+}
+.contenedor-fila{
+    display: table-row;
+    font-weight: bold;
+    text-align: center;
+}
+.contenedor-columna{
+    display: table-cell;
+}
+.Title  
+{
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;  
+}  
