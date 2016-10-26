@@ -91,7 +91,7 @@ function operacion(operation){
                     break;
                 }
                 //TODO: llamar a calculadora con el valor de la memoria, el display
-                let resul = operate(calculadora.memoria,document.getElementById("display").value,operador);
+                let resul = calculadora.operate(calculadora.memoria,document.getElementById("display").value,operador);
 //                calculadora.memoria = document.getElementById("display").value;                
                 document.getElementById("display").value = resul;
                 break;

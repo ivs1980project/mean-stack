@@ -2,24 +2,25 @@ var memoria;
 
 function Calculadora(){
     this.memoria=0;
+    this.otra = function (){console.log("hola!")};//!MAL
 }
-function sumar(operando1,operando2){
+Calculadora.prototype.sumar = function (operando1,operando2){
     return parseFloat(operando1)+parseFloat(operando2);
 }
 
-function restar(operando1,operando2){
+Calculadora.prototype.restar = function (operando1,operando2){
     return parseFloat(operando1)-parseFloat(operando2);
 }
 
-function multiplicar(operando1,operando2){
+Calculadora.prototype.multiplicar = function (operando1,operando2){
     return parseFloat(operando1)*parseFloat(operando2);
 }
 
-function dividir(operando1,operando2){
+Calculadora.prototype.dividir = function (operando1,operando2){
     return parseFloat(operando1)/parseFloat(operando2);
 }
 
-function operate (operando1,operando2,operacion){
+Calculadora.prototype.operate = function  (operando1,operando2,operacion){
     switch (operacion){
             case "+":{
                 return parseFloat(memoria)+parseFloat(operando2);

@@ -1,0 +1,39 @@
+{
+  "animales": [
+    {
+      "id": 1,
+      "nombre": "Richard Parker",
+      "raza": "Tigre de Bengala"
+    },
+    {
+      "id": 2,
+      "nombre": "Leo el Leon",
+      "raza": "Leon"
+    },
+    {
+      "id": 3,
+      "nombre": "Babe",
+      "raza": "Cerdito"
+    },
+    {
+      "id": 4,
+      "nombre": "Pantera Rosa",
+      "raza": "Pantera"
+    },
+    {
+      "nombre": "Botas",
+      "raza": "mono",
+      "id": 5
+    },
+    {
+      "nombre": "Botas",
+      "raza": "mono",
+      "id": 6
+    },
+    {
+      "nombre": "Botas",
+      "raza": "mono",
+      "id": 7
+    }
+  ]
+}

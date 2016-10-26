@@ -15,4 +15,9 @@ contenedor-tabla{
     text-align: center;
     font-weight: bold;
     font-size: larger;  
-}  
+} 
+.header-columna {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;  
+}
