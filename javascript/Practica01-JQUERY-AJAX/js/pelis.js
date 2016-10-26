@@ -27,5 +27,5 @@ function saveFilm(){
 }
 
 function fillRow(id,titulo,director,sinopsis,fecha){
-    $("#tabla tbody").append('<tr><td>12</td><td>33</td><td>44</td><td>34</td><td>44</td></tr>');
+    $("#tabla tbody").append('<tr><td>'id'</td><td>''</td><td>''</td><td>''</td><td>''</td></tr>');
 }
