@@ -8,7 +8,7 @@ function initializeEvents(){
     $("#save").click(saveFilm);
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
-    $("#selected").checkbox.chequed(selectRow);
+    $("#selected").click(selectRow);
 }
 
 function selectRow(){
@@ -39,13 +39,12 @@ function deleteFilm(){
     let table = $("tabla");
     for (var i = 0, row; row = tabla.rows[i]; i++) {
         console.log(row);
-        
-        for (var j = 0, col; col = row.cells[j]; j++) {
-            console.log(col);
-            if ($(".selected")==true){
-                row.remove();
-            }
-        }  
+        console.log(selected[i].checked);
+        if(selected[i].checked==true) {
+            alert("Checkbox is checked.");
+            row.remove();
+        } 
+            
     }
 
 }
@@ -60,7 +59,7 @@ function saveFilm(){
 }
 
 function fillRow(id,titulo,director,sinopsis,fecha){
-    let newRow= '<tr><td><input type="checkbox" id="selected" name="selected"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
+    let newRow= '<tr><td><input type="checkbox" id="selected" name="selected" value="true"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
     $("#tabla tbody").append(newRow);
 }
 
