@@ -8,6 +8,10 @@ function initializeEvents(){
     $("#save").click(saveFilm);
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
+
+}
+
+function addEvent(){
     $("#selected").click(selectRow);
 }
 
@@ -36,16 +40,22 @@ function clearValue(){
 
 function deleteFilm(){
 
-    let table = $("tabla");
-    for (var i = 0, row; row = tabla.rows[i]; i++) {
+    $("#table-body").find('film-row').css( "background-color", "red" );
+/*
+    let table = $("#table-body").find('film-row').css( "background-color", "red" );
+
+    console.log(table);
+
+    for (var i = 0, row; row = table.htmlCollection[i]; i++) {
         console.log(row);
+        console.log(i);
         console.log(selected[i].checked);
         if(selected[i].checked==true) {
             alert("Checkbox is checked.");
             row.remove();
         } 
             
-    }
+    }*/
 
 }
 
@@ -59,9 +69,8 @@ function saveFilm(){
 }
 
 function fillRow(id,titulo,director,sinopsis,fecha){
-    initializeEvents();
     $("#selected").click(selectRow);
-    let newRow= '<tr><td><input type="checkbox" id="selected" name="selected" value="true"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
-    $("#tabla tbody").append(newRow);
+    let newRow= '<tr class="film-row"><td><input type="checkbox" id="selected" name="selected" value="true"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
+    $("#table-body").append(newRow);
 }
 
