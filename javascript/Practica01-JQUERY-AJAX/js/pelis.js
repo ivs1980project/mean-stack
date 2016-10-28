@@ -59,6 +59,8 @@ function saveFilm(){
 }
 
 function fillRow(id,titulo,director,sinopsis,fecha){
+    initializeEvents();
+    $("#selected").click(selectRow);
     let newRow= '<tr><td><input type="checkbox" id="selected" name="selected" value="true"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
     $("#tabla tbody").append(newRow);
 }
