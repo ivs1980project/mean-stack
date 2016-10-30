@@ -1,6 +1,5 @@
 $(document).ready(initializeEvents);
 function initializeEvents(){
-    $("#id").focus(clearValue);
     $("#titulo").focus(clearValue);
     $("#director").focus(clearValue);
     $("#sinopsis").focus(clearValue);
@@ -31,7 +30,6 @@ function modifyFilm(){
 }
 
 function clearValue(){
-    $("#id").attr("value","");
     $("#titulo").attr("value","");
     $("#director").attr("value","");
     $("#sinopsis").attr("value","");
@@ -40,7 +38,23 @@ function clearValue(){
 
 function deleteFilm(){
 
-    $("#table-body").find('film-row').css( "background-color", "red" );
+    $('#table-body .film-row').css("background-color", "#ff0");
+    $('#table-body .film-row .td-checked').css("background-color", "#f00");
+
+      let table = $('#table-body .film-row');
+      let arrayChecked = $('#table-body .film-row .td-checked .selected');
+      for (let i= 0; i<arrayChecked.length; i++){
+            console.log(table[i]);
+            console.log(arrayChecked[i].checked);
+            if (arrayChecked[i].checked){
+                //Borrar la filaActual
+                console.log("Fila a borrar " +table[i])
+                let row = table.htmlCollection[i];
+                //marcar con un flag la fila a borrar
+                row.addClass('delete-row');
+            }
+      }
+        table.remove('#delete-row');
 /*
     let table = $("#table-body").find('film-row').css( "background-color", "red" );
 
@@ -60,17 +74,16 @@ function deleteFilm(){
 }
 
 function saveFilm(){
-    let id = $('input')[0].form.id.value;
-    let titulo = $('input')[1].form.titulo.value;
-    let director = $('input')[2].form.director.value;
-    let sinopsis = $('input')[3].form.sinopsis.value;
-    let fecha = $('input')[4].form.fecha.value;
-    fillRow(id,titulo,director,sinopsis,fecha);
+    let titulo = $('input')[0].form.titulo.value;
+    let director = $('input')[1].form.director.value;
+    let sinopsis = $('input')[2].form.sinopsis.value;
+    let fecha = $('input')[3].form.fecha.value;
+    fillRow(titulo,director,sinopsis,fecha);
 }
 
-function fillRow(id,titulo,director,sinopsis,fecha){
+function fillRow(titulo,director,sinopsis,fecha){
     $("#selected").click(selectRow);
-    let newRow= '<tr class="film-row"><td><input type="checkbox" id="selected" name="selected" value="true"></td><td>'+id+'</td><td>'+titulo+'</td><td>'+director+'</td><td>'+sinopsis+'</td><td>'+fecha+'</td></tr>';
+    let newRow= '<tr class="film-row"><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
     $("#table-body").append(newRow);
 }
 
