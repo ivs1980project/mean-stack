@@ -7,6 +7,7 @@ function initializeEvents(){
     $("#save").click(saveFilm);
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
+    $('#table-body .film-row .td-checked .selected').click(selectRow);
 
 }
 
@@ -38,25 +39,23 @@ function clearValue(){
 
 function deleteFilm(){
 
-    $('#table-body .film-row').css("background-color", "#ff0");
-    $('#table-body .film-row .td-checked').css("background-color", "#f00");
-
+    //$('#table-body .film-row').css("background-color", "#ff0");
+    //$('#table-body .film-row .td-checked').css("background-color", "#f00");
+    var rowsToDelete = [];
       let table = $('#table-body .film-row');
       let arrayChecked = $('#table-body .film-row .td-checked .selected');
-      for (let i= 0; i<arrayChecked.length; i++){
-            console.log(table[i]);
-            console.log(arrayChecked[i].checked);
-            if (arrayChecked[i].checked){
+      for (let posicion= 0; posicion<arrayChecked.length; posicion++){
+            console.log(table[posicion]);
+            if (arrayChecked[posicion].checked){
+                rowsToDelete.push(posicion);
+
                 //Borrar la filaActual
-                console.log("Fila a borrar " +table[i])
-                let row = table.htmlCollection[i];
                 //marcar con un flag la fila a borrar
-                row.addClass('delete-row');
             }
       }
-        table.remove('#delete-row');
+      console.log(rowsToDelete);
+        //table.remove('#delete-row');
 /*
-    let table = $("#table-body").find('film-row').css( "background-color", "red" );
 
     console.log(table);
 
