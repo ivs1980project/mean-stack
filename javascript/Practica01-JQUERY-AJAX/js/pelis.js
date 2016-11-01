@@ -8,8 +8,10 @@ function initializeEvents(){
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
     $('#table-body .film-row .td-checked .selected').click(selectRow);
-
 }
+
+
+var checkedRows = [];
 
 function addEvent(){
     $("#selected").click(selectRow);
@@ -21,13 +23,17 @@ function selectRow(){
     filaActual.addClass("selected");
 }
 
-function selectChequedRow(){
-
-}
-
-function modifyFilm(){
-
-
+function selectChequedRows(){
+    checkedRows = []
+    let arrayChecked = $('#table-body .film-row .td-checked .selected');
+    for (let posicion= 0; posicion<arrayChecked.length; posicion++){
+          if ($('#table-body .film-row .td-checked')[posicion].firstChild.checked){
+              //Guardamos el numero de fila a seleccionada
+              checkedRows.push(posicion);
+          }
+  
+      }
+      return checkedRows;
 }
 
 function clearValue(){
@@ -37,39 +43,30 @@ function clearValue(){
     $("#fecha").attr("value","");
 }
 
+function modifyFilm(){
+    let rowsToModify = selectChequedRows();
+    if (rowsToModify.length > 0){
+        if (rowsToModify.length == 1){
+            console.log($('#table-body .film-row')[rowsToModify[0]]);
+        } else {
+            alert("Por favor seleccione una sola fila")
+        }
+     } else {
+          alert("No se ha seleccionado ninguna fila para modificar");
+     }
+}
+
 function deleteFilm(){
-
-    //$('#table-body .film-row').css("background-color", "#ff0");
-    //$('#table-body .film-row .td-checked').css("background-color", "#f00");
-    var rowsToDelete = [];
-      let table = $('#table-body .film-row');
-      let arrayChecked = $('#table-body .film-row .td-checked .selected');
-      for (let posicion= 0; posicion<arrayChecked.length; posicion++){
-            console.log(table[posicion]);
-            if (arrayChecked[posicion].checked){
-                rowsToDelete.push(posicion);
-
-                //Borrar la filaActual
-                //marcar con un flag la fila a borrar
-            }
-      }
-      console.log(rowsToDelete);
-        //table.remove('#delete-row');
-/*
-
-    console.log(table);
-
-    for (var i = 0, row; row = table.htmlCollection[i]; i++) {
-        console.log(row);
-        console.log(i);
-        console.log(selected[i].checked);
-        if(selected[i].checked==true) {
-            alert("Checkbox is checked.");
-            row.remove();
-        } 
-            
-    }*/
-
+    let rowsToDelete = selectChequedRows();
+    if (rowsToDelete.length > 0){
+        //Reverse del array para borrar las filas correctas en la tabla original
+        rowsToDelete.reverse();
+        for (let deletePosition=0; deletePosition<rowsToDelete.length; deletePosition++){
+           $('#table-body .film-row')[rowsToDelete[deletePosition]].remove();
+        }
+     } else {
+          alert("No se ha seleccionado ninguna fila para borrar");
+     }
 }
 
 function saveFilm(){
