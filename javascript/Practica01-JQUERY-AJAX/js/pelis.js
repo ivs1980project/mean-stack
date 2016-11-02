@@ -7,33 +7,30 @@ function initializeEvents(){
     $("#save").click(saveFilm);
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
-    $('#table-body .film-row .td-checked .selected').click(selectRow);
 }
 
+
+var checkedRows = [];
 
 function addEvent(){
     $("#selected").click(selectRow);
 }
 
-function selectRow(){
-    let filaActual = $(this);
-    filaActual.css("background-color","#ff0000");
-    filaActual.addClass("selected");
-}
-
 function selectChequedRows(){
-    let checkedRows = []
+    checkedRows = []
     let arrayChecked = $('#table-body .film-row .td-checked .selected');
+
     for (let posicion= 0; posicion<arrayChecked.length; posicion++){
           if ($('#table-body .film-row .td-checked')[posicion].firstChild.checked){
               //Guardamos el numero de fila a seleccionada
               checkedRows.push(posicion);
-              
           }
   
       }
+
       return checkedRows;
 }
+
 
 function clearValue(){
     $("#titulo").attr("value","");
@@ -53,8 +50,30 @@ function modifyFilm(){
      } else {
           alert("No se ha seleccionado ninguna fila para modificar");
      }
-}
 
+    $('#table-body .film-row .td-checked').each(function(){
+        if ($(this)[0].firstChild.checked){
+            $(this).parent().addClass('row-selected');
+            showInForm();
+         }
+        });
+    }
+
+
+function showInForm(titulo,director,sinopsis,fecha){
+    $("#titulo").attr("value",titulo);
+    $("#director").attr("value",director);
+    $("#sinopsis").attr("value", sinopsis);
+    $("#fecha").attr("value",fecha);
+    
+    /*
+    $('input')[0].form.titulo.value;
+    $('input')[1].form.director.value = director;
+    $('input')[2].form.sinopsis.value = sinopsis;
+    $('input')[3].form.fecha.value = fecha;
+    */
+}
+/*
 function deleteFilm(){
     let rowsToDelete = selectChequedRows();
     if (rowsToDelete.length > 0){
@@ -67,6 +86,17 @@ function deleteFilm(){
           alert("No se ha seleccionado ninguna fila para borrar");
      }
 }
+*/
+
+function deleteFilm(){
+    //Buscamos entre todas las filas de la tabla las que tengan el check activo y eliminamos las filas
+        $('#table-body .film-row .td-checked').each(function(){
+            if ($(this)[0].firstChild.checked){
+                $(this).parent().remove();
+            }
+        });
+
+}        
 
 function saveFilm(){
     let titulo = $('input')[0].form.titulo.value;
@@ -77,7 +107,6 @@ function saveFilm(){
 }
 
 function fillRow(titulo,director,sinopsis,fecha){
-    $("#selected").click(selectRow);
     let newRow= '<tr class="film-row"><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
     $("#table-body").append(newRow);
 }

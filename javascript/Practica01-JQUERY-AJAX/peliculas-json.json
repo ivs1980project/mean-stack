@@ -13,6 +13,33 @@
       "director": "Tigre de Bengala2",
       "sinopsis": "Slot encuentra amigos2",
       "fecha": "12/12/1992"
+    },
+    {
+      "titulo": "Los Goonies",
+      "director": "mono",
+      "sinopsis": "Slot ha encontrado nuevos amigos",
+      "fecha": "01/04/1990",
+      "id": 3
+    },
+    {
+      "{titulo:Titulo ...,director:Director ...,sinopsis:Sinopsis ..., fecha:Fecha ...}": "",
+      "id": 4
+    },
+    {
+      "{Titulo:\"PI\",director:\"Yo mismo\",sinopsis:\"lalal\",fecha:\"12/12/2000\"}": "",
+      "id": 5
+    },
+    {
+      "{\"titulo\":\"PI\",\"director\":\"Juan Perez\",\"sinopsis\":\"La vida en una balsa\",\"fecha\":\"05/05/1952\"}": "",
+      "id": 6
+    },
+    {
+      "{\"titulo\":\"PI\",\"director\":\"Juan Perez\",\"sinopsis\":\"La vida en una balsa\",\"fecha\":\"05/05/1952\"}": "",
+      "id": 7
+    },
+    {
+      "{\n    \"titulo\": \"Titulo ...\",\n    \"director\": \"Director ...\",\n    \"sinopsis\": \"Sinopsis ...\",\n    \"fecha\": \"Fecha ...\"\n}": "",
+      "id": 8
     }
   ]
 }
