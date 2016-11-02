@@ -1,0 +1,18 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "titulo": "Los Goonies",
+      "director": "Tigre de Bengala",
+      "sinopsis": "Slot encuentra amigos",
+      "fecha": "12/12/1990"
+    },
+    {
+      "id": 2,
+      "titulo": "Los Goonies2",
+      "director": "Tigre de Bengala2",
+      "sinopsis": "Slot encuentra amigos2",
+      "fecha": "12/12/1992"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat&aacute;logo cine</title>
+    <link rel="stylesheet" href="css/pelis.css"></link>    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/pelis-ajax.js"></script>
+</head>
+<body>
+    <form action="#" method="post">
+        Titulo: <input type="text" name="titulo" id="titulo" value="Titulo ..." size="50"/></br>
+        Director: <input type="text" name="director" id="director" value="Director ..." size="50"/></br>
+        Sinopsis: <input type="text" name="sinopsis" id="sinopsis" value="Sinopsis ..." size="300"/> </br>       
+        Fecha: <input type="text" name="fecha" id="fecha" value="Fecha ..." size="20"/></br>
+        <input type="button" id="peticion_ajaxPut" value="Guardar"/>
+        <input type="button" id="modify" value="Modificar"/>
+        <input type="button" id="peticion_ajaxGet" value="Borrar"/>
+    </form>
+    <table border="1" id="film-table">
+        <thead id="table-head">
+            <tr>
+                <th class="header-columna">Selected</th>
+                <th class="header-columna">T&iacute;tulo</th>
+                <th class="header-columna">Director</th>
+                <th class="header-columna">Sinopsis</th>
+                <th class="header-columna">Fecha</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+</body>
+</html>

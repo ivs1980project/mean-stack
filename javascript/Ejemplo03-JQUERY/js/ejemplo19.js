@@ -5,10 +5,10 @@ function initializeEvents(){
 function peticionAjaxGenerica(){
     $.ajax({
         //Puede ser una cadena, un array o un object de JS
-        data: {id:"5",nombre:"Botas2",raza:"mono"},
-        //data:{},
+        //data: {id:"5",nombre:"Botas2",raza:"mono"},
+        data:{},
         //Tipo de peticion 
-        type:"PUT",
+        type:"GET",
         // tipo de dato esperado
         dataType:"json",
         //URL de comunicacion con el servicio

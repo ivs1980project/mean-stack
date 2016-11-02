@@ -11,8 +11,6 @@ function initializeEvents(){
 }
 
 
-var checkedRows = [];
-
 function addEvent(){
     $("#selected").click(selectRow);
 }
@@ -24,12 +22,13 @@ function selectRow(){
 }
 
 function selectChequedRows(){
-    checkedRows = []
+    let checkedRows = []
     let arrayChecked = $('#table-body .film-row .td-checked .selected');
     for (let posicion= 0; posicion<arrayChecked.length; posicion++){
           if ($('#table-body .film-row .td-checked')[posicion].firstChild.checked){
               //Guardamos el numero de fila a seleccionada
               checkedRows.push(posicion);
+              
           }
   
       }
