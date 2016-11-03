@@ -12,9 +12,6 @@ function initializeEvents(){
 
 var checkedRows = [];
 
-function addEvent(){
-    $("#selected").click(selectRow);
-}
 
 function selectChequedRows(){
     checkedRows = []
@@ -54,13 +51,14 @@ function modifyFilm(){
     $('#table-body .film-row .td-checked').each(function(){
         if ($(this)[0].firstChild.checked){
             $(this).parent().addClass('row-selected');
-            showInForm();
+            showInForm("deeide","u747u","7u7u","r4wf4");
          }
         });
     }
 
 
 function showInForm(titulo,director,sinopsis,fecha){
+    
     $("#titulo").attr("value",titulo);
     $("#director").attr("value",director);
     $("#sinopsis").attr("value", sinopsis);
@@ -97,6 +95,8 @@ function deleteFilm(){
         });
 
 }        
+
+
 
 function saveFilm(){
     let titulo = $('input')[0].form.titulo.value;

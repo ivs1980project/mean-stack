@@ -2,7 +2,7 @@ $(document).ready(initializeEvents);
 function initializeEvents(){
     //Cargar la tabla con los datos del json
     peticionAjaxGet();
-    $("#peticion_ajaxPut").click(peticionAjaxPost);
+    $("#peticion_ajaxPost").click(peticionAjaxPost);
     $("#peticion_ajaxGet").click(peticionAjaxGet);
     $("#peticion_ajaxDelete").click(peticionAjaxDelete);
 }
@@ -68,7 +68,6 @@ function peticionAjaxDelete(){
 
 function peticionCompletada(data, status){
     alert("Peticion completada con status : " +status + ": "+data);
-    console.log(data);
     jsonToRowData(data);
 
 }
@@ -85,14 +84,9 @@ function createFilmData(){
     let sinopsis = $('input')[2].form.sinopsis.value;
     let fecha = $('input')[3].form.fecha.value;
       
-    let film = {
-        titulo: titulo,
-        director : director,
-        sinopsis : sinopsis,
-        fecha : fecha
-    };
+    return ("titulo: "/"" +titulo + ",director:"+director+",sinopsis:"+sinopsis+",fecha:"+fecha);
 
-    return JSON.stringify(film,null,4);
+    //return JSON.stringify(film,null,4);
     //return("{Titulo:" + "\"" +titulo +"\""+",director:"+"\""+director+"\""+",sinopsis:"+"\""+sinopsis+"\""+",fecha:"+"\""+fecha+"\"}");
 }
 

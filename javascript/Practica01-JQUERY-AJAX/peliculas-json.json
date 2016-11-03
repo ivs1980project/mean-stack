@@ -22,24 +22,12 @@
       "id": 3
     },
     {
-      "{titulo:Titulo ...,director:Director ...,sinopsis:Sinopsis ..., fecha:Fecha ...}": "",
+      "titulo:otro filme,director:yo mismo,sinopsis:wefwef,fecha:2013": "",
       "id": 4
     },
     {
-      "{Titulo:\"PI\",director:\"Yo mismo\",sinopsis:\"lalal\",fecha:\"12/12/2000\"}": "",
+      "NaNsfewf,director:fefe,sinopsis:efeef,fecha:2013": "",
       "id": 5
-    },
-    {
-      "{\"titulo\":\"PI\",\"director\":\"Juan Perez\",\"sinopsis\":\"La vida en una balsa\",\"fecha\":\"05/05/1952\"}": "",
-      "id": 6
-    },
-    {
-      "{\"titulo\":\"PI\",\"director\":\"Juan Perez\",\"sinopsis\":\"La vida en una balsa\",\"fecha\":\"05/05/1952\"}": "",
-      "id": 7
-    },
-    {
-      "{\n    \"titulo\": \"Titulo ...\",\n    \"director\": \"Director ...\",\n    \"sinopsis\": \"Sinopsis ...\",\n    \"fecha\": \"Fecha ...\"\n}": "",
-      "id": 8
     }
   ]
 }
