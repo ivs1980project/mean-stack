@@ -1,6 +1,8 @@
 var operador;
 var newOperation = true;
 
+
+//Podemos crear un enum con los operadores
 calculadora = new Calculadora();
 
 function addValue(value) {

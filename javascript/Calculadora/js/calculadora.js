@@ -1,4 +1,5 @@
 var memoria;
+//Es mejor hacer la memoria como private y hacer un metodo para acceder a la misma
 
 function Calculadora(){
     this.memoria=0;
