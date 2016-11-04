@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class Ejemplo01NgforNgifComponent implements OnInit {
 
   variableDeInstancia : string;
-  tomaArray : number[] = [1,3,5,4,5,8,6,87,46];
+  //tomaArray : number[] = [1,3,5,4,5,8,6,87,46];
   constructor() {
     this.variableDeInstancia = "Renderizado componente ngif ngfor!";
    }

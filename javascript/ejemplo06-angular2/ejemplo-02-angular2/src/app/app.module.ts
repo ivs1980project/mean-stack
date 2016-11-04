@@ -19,6 +19,6 @@ import { Ejemplo01NgforNgifComponent } from './ejemplo01-ngfor-ngif/ejemplo01-ng
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent,MiComponenteNuevoComponent,Ejemplo01NgforNgifComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

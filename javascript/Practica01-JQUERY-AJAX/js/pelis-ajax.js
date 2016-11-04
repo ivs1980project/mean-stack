@@ -79,12 +79,14 @@ function peticionFallida(jqXHR, status, error){
 }
 
 function createFilmData(){
-    let titulo = $('input')[0].form.titulo.value;
-    let director = $('input')[1].form.director.value;
-    let sinopsis = $('input')[2].form.sinopsis.value;
-    let fecha = $('input')[3].form.fecha.value;
-      
-    return ("titulo: "/"" +titulo + ",director:"+director+",sinopsis:"+sinopsis+",fecha:"+fecha);
+    let title = $('input')[0].form.titulo.value;
+    let dir = $('input')[1].form.director.value;
+    let sinop = $('input')[2].form.sinopsis.value;
+    let date = $('input')[3].form.fecha.value;
+
+    let data = {"titulo": $('input')[0].form.titulo.value, "director": dir,"sinopsis": sinop,"fecha": date};
+    return data;
+     
 
     //return JSON.stringify(film,null,4);
     //return("{Titulo:" + "\"" +titulo +"\""+",director:"+"\""+director+"\""+",sinopsis:"+"\""+sinopsis+"\""+",fecha:"+"\""+fecha+"\"}");
@@ -105,3 +107,4 @@ function fillRow(titulo,director,sinopsis,fecha){
     let newRow= '<tr class="film-row"><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
     $("#table-body").append(newRow);
 }
+

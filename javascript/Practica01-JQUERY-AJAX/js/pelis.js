@@ -22,9 +22,7 @@ function selectChequedRows(){
               //Guardamos el numero de fila a seleccionada
               checkedRows.push(posicion);
           }
-  
-      }
-
+        }
       return checkedRows;
 }
 
@@ -99,15 +97,16 @@ function deleteFilm(){
 
 
 function saveFilm(){
+    let id = Math.random;
     let titulo = $('input')[0].form.titulo.value;
     let director = $('input')[1].form.director.value;
     let sinopsis = $('input')[2].form.sinopsis.value;
     let fecha = $('input')[3].form.fecha.value;
-    fillRow(titulo,director,sinopsis,fecha);
+    fillRow(id,titulo,director,sinopsis,fecha);
 }
 
-function fillRow(titulo,director,sinopsis,fecha){
-    let newRow= '<tr class="film-row"><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
+function fillRow(id,titulo,director,sinopsis,fecha){
+    let newRow= '<tr class="film-row"><td class="td-id" hidden="true">'+id+'</td><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
     $("#table-body").append(newRow);
 }
 
