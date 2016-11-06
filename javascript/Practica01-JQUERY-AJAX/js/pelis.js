@@ -1,12 +1,26 @@
 $(document).ready(initializeEvents);
 function initializeEvents(){
-    $("#titulo").focus(clearValue);
-    $("#director").focus(clearValue);
-    $("#sinopsis").focus(clearValue);
-    $("#fecha").focus(clearValue);
+    $("#form-titulo").focus(clearValue);
+    $("#form-director").focus(clearValue);
+    $("#form-sinopsis").focus(clearValue);
+    $("#form-fecha").focus(clearValue);
     $("#save").click(saveFilm);
     $("#modify").click(modifyFilm);
     $("#delete").click(deleteFilm);
+    $("#table-body .film-row").focus(setFocus);
+    $("#table-body .film-row").blur(setBlur);
+    $("#table-body .film-row").click(selectRow);
+}
+
+function setFocus(){
+    $(this).css("background-color","#fF0");
+}
+function setBlur(){
+    $(this).css("background-color","#0Ff");
+}
+
+function selectRow(){
+    $(this).parent().addClass('row-selected');
 }
 
 
@@ -28,13 +42,15 @@ function selectChequedRows(){
 
 
 function clearValue(){
-    $("#titulo").attr("value","");
-    $("#director").attr("value","");
-    $("#sinopsis").attr("value","");
-    $("#fecha").attr("value","");
+    $("#form-titulo").attr("value","");
+    $("#form-director").attr("value","");
+    $("#form-sinopsis").attr("value","");
+    $("#form-fecha").attr("value","");
 }
 
 function modifyFilm(){
+
+
     let rowsToModify = selectChequedRows();
     if (rowsToModify.length > 0){
         if (rowsToModify.length == 1){
@@ -49,18 +65,20 @@ function modifyFilm(){
     $('#table-body .film-row .td-checked').each(function(){
         if ($(this)[0].firstChild.checked){
             $(this).parent().addClass('row-selected');
-            showInForm("deeide","u747u","7u7u","r4wf4");
          }
         });
+        showInForm($('.row-selected').find('.td-titulo').text(),$('.row-selected').find('.td-director').text(),
+        $('.row-selected').find('.td-sinopsis').text(),$('.row-selected').find('.td-fecha').text());
+        
     }
 
 
 function showInForm(titulo,director,sinopsis,fecha){
     
-    $("#titulo").attr("value",titulo);
-    $("#director").attr("value",director);
-    $("#sinopsis").attr("value", sinopsis);
-    $("#fecha").attr("value",fecha);
+    $("#form-titulo").attr("value",titulo);
+    $("#form-director").attr("value",director);
+    $("form-#sinopsis").attr("value", sinopsis);
+    $("form-#fecha").attr("value",fecha);
     
     /*
     $('input')[0].form.titulo.value;
@@ -98,11 +116,19 @@ function deleteFilm(){
 
 function saveFilm(){
     let id = Math.random;
-    let titulo = $('input')[0].form.titulo.value;
+    /*let titulo = $('input')[0].form.titulo.value;
     let director = $('input')[1].form.director.value;
     let sinopsis = $('input')[2].form.sinopsis.value;
-    let fecha = $('input')[3].form.fecha.value;
+    let fecha = $('input')[3].form.fecha.value;*/
+
+    let titulo = $("#form-titulo").val();
+    let director = $("#form-director").val();
+    let sinopsis = $("#form-sinopsis").val();
+    let fecha = $("#form-fecha").val()
     fillRow(id,titulo,director,sinopsis,fecha);
+    $("#table-body .film-row").focus(setFocus);
+    $("#table-body .film-row").blur(setBlur);
+    $("#table-body .film-row").click(selectRow);
 }
 
 function fillRow(id,titulo,director,sinopsis,fecha){

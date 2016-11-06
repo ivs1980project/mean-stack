@@ -4,7 +4,8 @@ function initializeEvents(){
     peticionAjaxGet();
     $("#peticion_ajaxPost").click(peticionAjaxPost);
     $("#peticion_ajaxGet").click(peticionAjaxGet);
-    $("#peticion_ajaxDelete").click(peticionAjaxDelete);
+    $("#peticion_ajaxDelete").click(peticionAjaxDelete;
+    $("#fecha").datepicker();
 }
 function peticionAjaxPut(){
 
@@ -38,7 +39,7 @@ function peticionAjaxPost(){
     }).done(peticionCompletada).fail(peticionFallida);
 }
 
-function peticionAjaxGet(){
+function peticionAjaxGet(reload){
     $.ajax({
         //Puede ser una cadena, un array o un object de JS
         data: {},
@@ -53,6 +54,14 @@ function peticionAjaxGet(){
 }
 
 function peticionAjaxDelete(){
+    //Recuperamos los ids de las filas que están seleccionadas para un borrado multiple
+    let rowsToDelete=[];
+    $('#table-body .film-row .td-checked').each(function(){
+        if ($(this)[0].firstChild.checked){
+               $(this).parent().remove();
+            }
+        });
+    //TODO:Recuperar el id de la pelicula seleccionada para borrar que estará en el formulario
     $.ajax({
         //Puede ser una cadena, un array o un object de JS
         data: {},
@@ -62,7 +71,7 @@ function peticionAjaxDelete(){
         // tipo de dato esperado
         dataType:"json",
         //URL de comunicacion con el servicio
-        url: "http://localhost:3000/peliculas/"
+        url: "http://localhost:3000/peliculas/"+number
     }).done(peticionCompletada).fail(peticionFallida);
 }
 
@@ -79,32 +88,29 @@ function peticionFallida(jqXHR, status, error){
 }
 
 function createFilmData(){
-    let title = $('input')[0].form.titulo.value;
-    let dir = $('input')[1].form.director.value;
-    let sinop = $('input')[2].form.sinopsis.value;
-    let date = $('input')[3].form.fecha.value;
-
-    let data = {"titulo": $('input')[0].form.titulo.value, "director": dir,"sinopsis": sinop,"fecha": date};
+    let data = {"titulo": $("#titulo").val(), "director": $("#director").val(),"sinopsis": $("#sinopsis").val(),"fecha": $("#fecha").val()};
     return data;
-     
-
-    //return JSON.stringify(film,null,4);
-    //return("{Titulo:" + "\"" +titulo +"\""+",director:"+"\""+director+"\""+",sinopsis:"+"\""+sinopsis+"\""+",fecha:"+"\""+fecha+"\"}");
 }
 
 function jsonToRowData(data){
     for (let iterator=0;iterator<data.length;iterator++){
-        console.log(data[iterator].id);
+        let id = data[iterator].id;
         let titulo = data[iterator].titulo;
         let director =data[iterator].director;
         let sinopsis = data[iterator].sinopsis;
         let fecha = data[iterator].fecha;
-        fillRow(titulo,director,sinopsis,fecha);
+        fillRow(id,titulo,director,sinopsis,fecha);
     }
 }
 
-function fillRow(titulo,director,sinopsis,fecha){
-    let newRow= '<tr class="film-row"><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
+
+function fillRow(id,titulo,director,sinopsis,fecha){
+    let newRow= '<tr class="film-row"><td class="td-id" hidden="true">'+id+'</td><td class="td-checked"><input type="checkbox" class="selected"/></td><td class="td-titulo">'+titulo+'</td><td class="td-director">'+director+'</td><td class="td-sinopsis">'+sinopsis+'</td><td class="td-fecha">'+fecha+'</td></tr>';
     $("#table-body").append(newRow);
+}
+
+function reloadTableBody(){
+    $('#table-body').children().remove();
+    peticionAjaxGet();
 }
 

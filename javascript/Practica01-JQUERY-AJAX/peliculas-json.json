@@ -31,10 +31,6 @@
     },
     {
       "NaNdweade,director:wedew,sinopsis:dwed,fecha:dwedwe": "",
-      "id": 6
-    },
-    {
-      "NaNdweade,director:wedew,sinopsis:dwed,fecha:dwedwe": "",
       "id": 7
     },
     {
@@ -91,6 +87,34 @@
       "sinopsis": "dasd",
       "fecha": "dasad",
       "id": 17
+    },
+    {
+      "titulo": "Manuel",
+      "director": "el otro",
+      "sinopsis": "por qaui",
+      "fecha": 2001,
+      "id": 18
+    },
+    {
+      "titulo": "",
+      "director": "",
+      "sinopsis": "",
+      "fecha": "11/22/2016",
+      "id": 19
+    },
+    {
+      "titulo": "YUuoe",
+      "director": "oidwaidie",
+      "sinopsis": "doede",
+      "fecha": "11/22/2016",
+      "id": 20
+    },
+    {
+      "titulo": "",
+      "director": "",
+      "sinopsis": "",
+      "fecha": "",
+      "id": 21
     }
   ]
 }
