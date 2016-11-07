@@ -8,13 +8,6 @@
       "fecha": "12/12/1990"
     },
     {
-      "id": 2,
-      "titulo": "Los Goonies2",
-      "director": "Tigre de Bengala2",
-      "sinopsis": "Slot encuentra amigos2",
-      "fecha": "12/12/1992"
-    },
-    {
       "titulo": "Los Goonies",
       "director": "mono",
       "sinopsis": "Slot ha encontrado nuevos amigos",
@@ -24,48 +17,6 @@
     {
       "titulo:otro filme,director:yo mismo,sinopsis:wefwef,fecha:2013": "",
       "id": 4
-    },
-    {
-      "NaNsfewf,director:fefe,sinopsis:efeef,fecha:2013": "",
-      "id": 5
-    },
-    {
-      "NaNdweade,director:wedew,sinopsis:dwed,fecha:dwedwe": "",
-      "id": 7
-    },
-    {
-      "NaN,director:,sinopsis:,fecha:": "",
-      "id": 8
-    },
-    {
-      "NaN,director:,sinopsis:,fecha:": "",
-      "id": 9
-    },
-    {
-      "NaN,director:,sinopsis:,fecha:": "",
-      "id": 10
-    },
-    {
-      "NaN,director:,sinopsis:,fecha:": "",
-      "id": 11
-    },
-    {
-      "NaN,director:,sinopsis:,fecha:": "",
-      "id": 12
-    },
-    {
-      "titulo": "Los Goonies",
-      "director": "mono",
-      "sinopsis": "Slot ha encontrado nuevos amigos",
-      "fecha": "01/04/1990",
-      "id": 13
-    },
-    {
-      "titulo": "Los Goonies",
-      "director": "mono",
-      "sinopsis": "Slot ha encontrado nuevos amigos",
-      "fecha": "01/04/1990",
-      "id": 14
     },
     {
       "titulo": "blade runner",
@@ -136,6 +87,55 @@
       "sinopsis": "gtr",
       "fecha": "11/08/2016",
       "id": 24
+    },
+    {
+      "titulo": "fasdf",
+      "director": "faewf",
+      "sinopsis": "wfef",
+      "fecha": "11/02/2016",
+      "id": 25
+    },
+    {
+      "titulo": "fli",
+      "director": "ewfrwefwe",
+      "sinopsis": "fwefw",
+      "fecha": "11/30/2016",
+      "id": 26
+    },
+    {
+      "titulo": "fli",
+      "director": "ewfrwefwe",
+      "sinopsis": "fwefw",
+      "fecha": "11/30/2016",
+      "id": 27
+    },
+    {
+      "titulo": "giweiwei",
+      "director": "qwepoqw",
+      "sinopsis": "pwoefwej",
+      "fecha": "11/02/2016",
+      "id": 28
+    },
+    {
+      "titulo": "La definitiva",
+      "director": "qweoqwopi",
+      "sinopsis": "eqwopreqwio",
+      "fecha": "12/08/2016",
+      "id": 29
+    },
+    {
+      "titulo": "blade runner",
+      "director": "ìp",
+      "sinopsis": "+o",
+      "fecha": "11/24/2016",
+      "id": 30
+    },
+    {
+      "titulo": "El titulo 3",
+      "director": "yo no fui",
+      "sinopsis": "aoeiriitiit",
+      "fecha": "11/22/2016",
+      "id": 31
     }
   ]
 }
