@@ -3,16 +3,17 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-mi-componente-nuevo',
   templateUrl: './mi-componente-nuevo.component.html',
-  //template:'<p> Hola mundo </p>'
+  //template:'<p> Hola Mundo </p>',
   styleUrls: ['./mi-componente-nuevo.component.css']
-  //styles: [`p { background-color: red;}`]
+  //styles:[`p { background-color: red;}`]
 })
 export class MiComponenteNuevoComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
-    console.log("Se ha iniciado el componente");
+    //console.log("Inicializado mi nuevo componente")
   }
 
 }
+

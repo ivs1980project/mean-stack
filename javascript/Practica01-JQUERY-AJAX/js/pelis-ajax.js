@@ -4,9 +4,15 @@ function initializeEvents(){
     peticionAjaxGet();
     $("#peticion_ajaxPost").click(peticionAjaxPost);
     $("#peticion_ajaxGet").click(peticionAjaxGet);
-    $("#peticion_ajaxDelete").click(peticionAjaxDelete;
+    $("#peticion_ajaxDelete").click(peticionAjaxDelete);
     $("#fecha").datepicker();
 }
+
+function selectRow(){
+    $(this).parent().addClass('row-selected');
+}
+
+
 function peticionAjaxPut(){
 
     $.ajax({
@@ -39,7 +45,7 @@ function peticionAjaxPost(){
     }).done(peticionCompletada).fail(peticionFallida);
 }
 
-function peticionAjaxGet(reload){
+function peticionAjaxGet(){
     $.ajax({
         //Puede ser una cadena, un array o un object de JS
         data: {},
@@ -77,6 +83,7 @@ function peticionAjaxDelete(){
 
 function peticionCompletada(data, status){
     alert("Peticion completada con status : " +status + ": "+data);
+    reloadTableBody();
     jsonToRowData(data);
 
 }
@@ -101,6 +108,7 @@ function jsonToRowData(data){
         let fecha = data[iterator].fecha;
         fillRow(id,titulo,director,sinopsis,fecha);
     }
+    $("#table-body .film-row").click(selectRow);
 }
 
 
@@ -111,6 +119,5 @@ function fillRow(id,titulo,director,sinopsis,fecha){
 
 function reloadTableBody(){
     $('#table-body').children().remove();
-    peticionAjaxGet();
 }
 
