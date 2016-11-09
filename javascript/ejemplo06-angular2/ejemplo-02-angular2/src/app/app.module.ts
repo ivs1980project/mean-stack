@@ -29,6 +29,6 @@ import { NumerosPrimosPanelComponent } from './numeros-primos-panel/numeros-prim
     HttpModule
   ],
   providers: [],
-  bootstrap: [AppComponent,NumerosPrimosLeyendaComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,9 @@
 <h1>Identificador de numeros primos y divisibles por 3</h1>
 <ul>
   <li *ngFor="let numeroActual of listaDeNumeros">
-    <span [ngStyle]="{color: colorEnDistintosEstados(numero)}">
-        <app-numeros-primos-fila [numero]="numeroActual">Cargando ... app-numeros-primos-fila</app-numeros-primos-fila>
+    <span [ngStyle]="{color: colorEnDistintosEstados(numeroActual)}">
+        <app-numeros-primos-fila [numero]="numeroActual" (eventoMostrar)="eventoDeFilaRecibido($event)">Fila</app-numeros-primos-fila>
+        <span *ngIf="mostrarInformacion">{{tipoDeNumero(numeroActual)}}</span>
     </span>
   </li>
 </ul>
