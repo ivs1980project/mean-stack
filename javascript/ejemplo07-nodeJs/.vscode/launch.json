@@ -1,88 +1,63 @@
 {
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Iniciar",
             "type": "node",
             "request": "launch",
-            "program": "${workspaceRoot}/",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "development"
-            },
-            "console": "internalConsole",
-            "sourceMaps": false,
-            "outFiles": []
-        },
-        {
-            "name": "ejemplo-01-nodejs-base.js",
-            "type": "node",
-            "request": "launch",
+            "name": "Ejemplo 01",
             "program": "${workspaceRoot}/ejemplo-01-nodejs-base.js",
-            "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "development"
-            },
-            "console": "internalConsole",
-            "sourceMaps": false,
-            "outFiles": []
+            "cwd": "${workspaceRoot}"
         },
         {
-            "name": "Asociar",
-            "type": "node",
-            "request": "attach",
-            "port": 5858,
-            "address": "localhost",
-            "restart": false,
-            "sourceMaps": false,
-            "outFiles": [],
-            "localRoot": "${workspaceRoot}",
-            "remoteRoot": null
-        },
-        {
-            "name": "Asociar al proceso",
-            "type": "node",
-            "request": "attach",
-            "processId": "${command.PickProcess}",
-            "port": 5858,
-            "sourceMaps": false,
-            "outFiles": []
-        },
-        {
-            "name": "ejemplo-02-nodejs-require",
             "type": "node",
             "request": "launch",
+            "name": "Ejemplo 02",
             "program": "${workspaceRoot}/ejemplo-02-nodejs-require.js",
-            "stopOnEntry": false,
-            "args": [
-                "ejemplo-02-nodejs-require.js"
-            ],
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
-            "runtimeExecutable": null,
-            "runtimeArgs": [
-                "--nolazy"
-            ],
-            "env": {
-                "NODE_ENV": "development"
-            },
-            "console": "internalConsole",
-            "sourceMaps": false,
-            "outFiles": []
+            "args": [
+                "ejemplo-01-nodejs-base.js"
+            ]
         },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 03",
+            "program": "${workspaceRoot}/ejemplo-03-nodejs-async.js",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                "ejemplo-01-nodejs-base.js"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 04",
+            "program": "${workspaceRoot}/ejemplo-04-nodejs-listar-ficheros.js",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                ".",
+                ".js"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 05",
+            "program": "${workspaceRoot}/ejemplo-05-nodejs-listar-ficheros.main.js",
+            "cwd": "${workspaceRoot}",
+            "args": [
+                ".",
+                ".5t5t5js3"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Asociar al proceso",
+            "port": 5858
+        }
     ]
 }
