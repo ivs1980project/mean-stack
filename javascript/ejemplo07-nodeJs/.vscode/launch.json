@@ -55,6 +55,41 @@
         },
         {
             "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 06",
+            "program": "${workspaceRoot}/ejemplo-06-nodejs-http.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 07",
+            "program": "${workspaceRoot}/ejemplo-07-nodejs-http-pipe-bl.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 08",
+            "program": "${workspaceRoot}/ejemplo-08-nodejs-http-async.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 09",
+            "program": "${workspaceRoot}/ejemplo-09-nodejs-server.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 10",
+            "program": "${workspaceRoot}/ejemplo-10-nodejs-file-server.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Asociar al proceso",
             "port": 5858
