@@ -9,4 +9,4 @@ function enviarImagen(request, response) {
 }
 
 server.listen(8888);
-console.log("Servidor iniciado en el puerto 8888")
+console.log("Servidor iniciado en el puerto 8888");

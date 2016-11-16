@@ -90,6 +90,20 @@
         },
         {
             "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 11",
+            "program": "${workspaceRoot}/ejemplo-11-nodejs-http-UpperCasePost.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Ejemplo 12",
+            "program": "${workspaceRoot}/ejemplo-12-nodejs-json-server.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Asociar al proceso",
             "port": 5858
