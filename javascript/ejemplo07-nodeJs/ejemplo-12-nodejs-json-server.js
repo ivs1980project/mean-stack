@@ -7,7 +7,7 @@ var server = http.createServer(
         console.log(request.url);
         //  if ("/clientes" == miUrl.path) {
         //Expresion regular
-        if (/^\/clientes\/[0-9]$/.test(request.url)) {
+        if (/^\/clientes\/[0-9]{3,5}$/.test(request.url)) {
             response.writeHead(200, { 'content-type': "application/json" });
             response.end(JSON.stringify({ "nombre": "Ivan" }));
         } else {
