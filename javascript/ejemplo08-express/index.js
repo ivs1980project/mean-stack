@@ -57,5 +57,37 @@ router.delete("/conrouterDelete", evaluaElVerboHttp);
 app.use("/cosacuca", router);
 
 
+var routerRest = express.Router();
+routerRest.route("/coches")
+    .get((request, response) => {
+        response.json([{ _id: 1, marca: "opel", modelo: "corsa" },
+        { _id: 2, marca: "audi", modelo: "a4" },
+        { _id: 3, marca: "mazda", modelo: "5" }])
+    })
+    .post((request, response) => {
+        //Recoger la informacion del body para crear un nuevo coche
+        /*request.body.marca
+        request.body.modelo*/
+        response.json({ message: "correcto" });
+    });
+
+routerRest.route("/coches/:alias")
+    .get((request, response) => {
+        //TODO: Obtener el coche a partir de su idCoche
+        response.json({ _id: 1, marca: "opel", modelo: "corsa" });
+    })
+    .delete((request, response) => {
+        //TODO: Eliminar el coche a partir de su idCoche
+        response.json({ message: "eliminado" });
+    })
+    .put((request, response) => {
+        //TODO: Modificar el coche a partir de su idCoche
+        response.json({ message: "actualizado" });
+    });
+
+app.use("/concesionario", routerRest);
+
 app.listen(8080);
 console.log("Servidor iniciado")
+
+
