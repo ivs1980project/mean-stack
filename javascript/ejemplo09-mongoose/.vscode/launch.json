@@ -27,6 +27,13 @@
         },
         {
             "type": "node",
+            "request": "launch",
+            "name": "Ejemplo03-staticMethod",
+            "program": "${workspaceRoot}\\ejemplo03-staticMethod.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Asociar al proceso",
             "port": 5858
