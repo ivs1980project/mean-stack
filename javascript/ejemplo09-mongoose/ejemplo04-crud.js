@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost/test");
 
 // Importamos el modelo definido en el fichero ejemplo04model
-var Libro = require("./ejemplo04model");
+var Libro = require("./ejemplo04-model");
 
 
 function getLibros(limit, skip) {

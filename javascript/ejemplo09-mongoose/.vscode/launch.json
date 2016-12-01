@@ -34,6 +34,13 @@
         },
         {
             "type": "node",
+            "request": "launch",
+            "name": "Ejemplo05-Validate",
+            "program": "${workspaceRoot}\\ejemplo05-validate.js",
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "node",
             "request": "attach",
             "name": "Asociar al proceso",
             "port": 5858
