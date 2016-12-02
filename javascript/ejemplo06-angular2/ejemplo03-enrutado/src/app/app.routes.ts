@@ -4,7 +4,7 @@ import { FormularioLibroComponent } from './formulario-libro/formulario-libro.co
 import { ListaLibrosComponent } from './lista-libros/lista-libros.component';
 
 export const AppRoutes: Routes = [
-    { path: '', redirectTo: 'consultar', pathMatch: 'full' },
+    { path: '', redirectTo: 'listar', pathMatch: 'full' },
     { path: 'listar', component: ListaLibrosComponent },
     { path: 'formulario', component: FormularioLibroComponent },
     { path: 'consultar/:id', component: ConsultaLibroComponent }

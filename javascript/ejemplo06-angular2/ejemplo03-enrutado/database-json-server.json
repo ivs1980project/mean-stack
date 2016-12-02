@@ -1,0 +1,24 @@
+{
+    "libros": [
+        {
+            "id": 1,
+            "titulo": "Historia de primero"
+        },
+        {
+            "id": 2,
+            "titulo": "Historia de segundo"
+        },
+        {
+            "id": 3,
+            "titulo": "Historia de tercero"
+        },
+        {
+            "id": 4,
+            "titulo": "Matematicas de tercero"
+        },
+        {
+            "id": 5,
+            "titulo": "Arte de tercero"
+        }
+    ]
+}
