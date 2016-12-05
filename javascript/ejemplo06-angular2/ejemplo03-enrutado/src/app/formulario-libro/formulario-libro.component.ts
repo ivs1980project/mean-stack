@@ -25,7 +25,7 @@ export class FormularioLibroComponent implements OnInit {
     console.log(this.libro);
     this.service.addLibro(this.libro).subscribe(
       (datos) => {
-        console.log("Libro guardado", datos.id);
+        console.log("Libro guardado", datos.id, datos.titulo);
       }, (error) => {
         console.error("Error");
       }, () => {

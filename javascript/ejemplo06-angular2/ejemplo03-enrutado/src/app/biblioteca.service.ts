@@ -16,7 +16,7 @@ export class BibliotecaService {
       getLibros(): Observable<Libro[]> {
             return this.http.get(this.url)
                   .map((response: Response) => {
-                        return response.json
+                        return response.json();
                   }).
                   catch((error: any) => {
                         console.log("Error al procesar la peticion");
@@ -30,7 +30,7 @@ export class BibliotecaService {
             let miCabecera = new Headers({ 'Content-type': 'application/json' });
             let options = new RequestOptions({ headers: miCabecera });
             return this.http.post(this.url, miLibroEnString, options)
-                  .map((response: Response) => { return response.json; })
+                  .map((response: Response) => { return response.json(); })
                   .catch((error: any) => {
                         console.log("Error al procesar la peticion");
                         return Observable.throw(error.json().error || "Error de servidor")

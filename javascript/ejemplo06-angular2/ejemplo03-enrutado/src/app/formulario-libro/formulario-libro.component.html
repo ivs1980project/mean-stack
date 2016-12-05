@@ -1,5 +1,5 @@
 <form #form="ngForm" (ngSubmit)='enviarFormulario(form.value)'>
   <label>Titulo del libro</label>
-  <input type="text" #titulo="ngModel" [(ngModel)]="libro.titulo" required/>
+  <input type="text" #titulo="ngModel" [(ngModel)]="libro.titulo" [ngModelOptions]="{standalone: true}" required/>
   <button type="submit">Enviar</button>
 </form>
